@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary selection:bg-accent-blue selection:text-white;
+  }
+}
+
+/* Custom Webkit scrollbar for sleek dark look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Custom animations for threats & cyber grid */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
+    border-color: rgba(239, 68, 68, 0.8);
+  }
+}
+
+.critical-pulse-card {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(17, 24, 39, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%),
+    radial-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(55, 65, 81, 0.4);
+}
